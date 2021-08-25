@@ -1,0 +1,12 @@
+Package: raspagemConectaRecife
+Type: Package
+Title: Vacina Recife - Dados sobre a vacinação
+Version: 0.1.0
+Author: Andryene Pessoa e Guilherme Arruda
+Maintainer: Guilherme Arruda <gmsa@discente.ifpe.edu.br>
+Description: Esse programa tem o intuito de capturar dados sobre a 
+  vacinação do COVID19 na cidade de Recife/PE
+License: Creative Commons
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
