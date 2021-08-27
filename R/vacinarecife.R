@@ -11,6 +11,7 @@ vacinarecife <- function(){
 
   # Carregando os pacotes necessários
   library("tidyverse")
+  library("rvest")
   library("ggplot2")
   library("dplyr")
   library("cowplot")
@@ -30,7 +31,7 @@ vacinarecife <- function(){
 
   # Gerando os gráficos
   d1 <- ggplot(tabelaVacina, aes(x = Sexo, y = Dose1)) +
-    geom_col(fill = 'blue') +
+    geom_col(fill = 'red') +
     xlab("Sexo") +
     ylab("Dose 1")
 
@@ -39,8 +40,8 @@ vacinarecife <- function(){
     xlab("Sexo") +
     ylab("Dose 2")
 
-  dU <- ggplot(tabelaVacina, aes(x = Sexo, y = Dose2)) +
-    geom_col(fill = 'blue') +
+  dU <- ggplot(tabelaVacina, aes(x = Sexo, y = DoseUnica)) +
+    geom_col(fill = 'green') +
     xlab("Sexo") +
     ylab("Dose Única")
 
