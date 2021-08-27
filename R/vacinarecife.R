@@ -87,12 +87,6 @@ vacinarecife <- function(){
          subtitle = "Fonte: Conecta Recife")
 
   # Combinando os gráficos gerados
-  title <- ggdraw() +
-    draw_label("Vacinação COVID 19 RECIFE - Número de doses
-    aplicadas por gênero
-    Alunos: Andryene Pessoa e Guilherme Arruda",
-               fontface='bold')
-
   title_plot =  ' Vacinação COVID19 RECIFE - Número de doses
                               aplicadas por gênero.
    Alunos: Andryene Pessoa e Guilherme Arruda'
