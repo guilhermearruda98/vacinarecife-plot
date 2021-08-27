@@ -3,4 +3,4 @@ Vacina Recife Plot - Visualize o andamento da vacinação em Recife através de 
 
 Autores do programa: Andryene Pessoa e Guilherme Arruda
 
-![alt text](https://ibb.co/KDFQWLb)
+![alt text](https://i.ibb.co/FXgfz0m/Rplot.png)
