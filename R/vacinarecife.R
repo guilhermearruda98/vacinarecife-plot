@@ -29,27 +29,77 @@ vacinarecife <- function(){
                          'Dose2' = 'Dose 2',
                          'DoseUnica' = 'Dose Única')
 
+  tabelaVacina <- tabelaVacina[(-4),]
+
   # Gerando os gráficos
-  d1 <- ggplot(tabelaVacina, aes(x = Sexo, y = Dose1)) +
-    geom_col(fill = 'red') +
-    xlab("Sexo") +
-    ylab("Dose 1")
+  d1 <- ggplot(tabelaVacina, aes(x = "", y = Dose1, fill = Sexo)) +
+    geom_bar(width = 1, stat = "identity", color="green") +
+    coord_polar("y", start = 0, direction = -1) +
+    theme(
+      axis.title.x = element_blank(),
+      axis.title.y = element_blank(),
+      panel.border = element_blank(),
+      panel.grid=element_blank(),
+      axis.ticks = element_blank(),
+      panel.background = element_blank(),
+      axis.text.x=element_blank(),
+      legend.title = element_blank()) +
+    geom_text(data = tabelaVacina,
+              aes(x ="", y=Dose1, label = Dose1),
+              position = position_stack(vjust = 0.5)) +
+    labs(title = "Grafico 1: Primeira Dose",
+         subtitle = "Fonte: Conecta Recife")
 
-  d2 <- ggplot(tabelaVacina, aes(x = Sexo, y = Dose2)) +
-    geom_col(fill = 'blue') +
-    xlab("Sexo") +
-    ylab("Dose 2")
+  d2 <- ggplot(tabelaVacina, aes(x = "", y = Dose2, fill = Sexo)) +
+    geom_bar(width = 1, stat = "identity", color="green") +
+    coord_polar("y", start = 0, direction = -1) +
+    theme(
+      axis.title.x = element_blank(),
+      axis.title.y = element_blank(),
+      panel.border = element_blank(),
+      panel.grid=element_blank(),
+      axis.ticks = element_blank(),
+      panel.background = element_blank(),
+      axis.text.x=element_blank(),
+      legend.title = element_blank()) +
+    geom_text(data = tabelaVacina,
+              aes(x ="", y=Dose2, label = Dose2),
+              position = position_stack(vjust = 0.5)) +
+    labs(title = "Grafico 2: Segunda Dose",
+         subtitle = "Fonte: Conecta Recife")
 
-  dU <- ggplot(tabelaVacina, aes(x = Sexo, y = DoseUnica)) +
-    geom_col(fill = 'green') +
-    xlab("Sexo") +
-    ylab("Dose Única")
+  dU <-
+    ggplot(tabelaVacina, aes(x = "", y = DoseUnica, fill = Sexo)) +
+    geom_bar(width = 1, stat = "identity", color="green") +
+    coord_polar("y", start = 0, direction = -1) +
+    theme(
+      axis.title.x = element_blank(),
+      axis.title.y = element_blank(),
+      panel.border = element_blank(),
+      panel.grid=element_blank(),
+      axis.ticks = element_blank(),
+      panel.background = element_blank(),
+      axis.text.x=element_blank(),
+      legend.title = element_blank()) +
+    geom_text(data = tabelaVacina,
+              aes(x ="", y=DoseUnica, label = DoseUnica),
+              position = position_stack(vjust = 0.5)) +
+    labs(title = "Grafico 3: Dose Única",
+         subtitle = "Fonte: Conecta Recife")
 
   # Combinando os gráficos gerados
   title <- ggdraw() +
-    draw_label("Vacinação COVID 19 RECIFE - Número de doses aplicadas por gênero
-               Alunos: Andryene Pessoa e Guilherme Arruda",
+    draw_label("Vacinação COVID 19 RECIFE - Número de doses
+    aplicadas por gênero
+    Alunos: Andryene Pessoa e Guilherme Arruda",
                fontface='bold')
 
-  plot_grid(title, d1, d2, dU, ncol=1)
+  title_plot =  ' Vacinação COVID19 RECIFE - Número de doses
+                              aplicadas por gênero.
+   Alunos: Andryene Pessoa e Guilherme Arruda'
+
+  plot_grid(ncol = 3, labels = title_plot,
+            label_size = 16, label_y = 1,
+            rel_heights = c(.65,-0.05),
+            d1, d2, dU, nrow = 2)
 }
