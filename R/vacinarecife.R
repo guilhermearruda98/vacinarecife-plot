@@ -39,13 +39,13 @@ vacinarecife <- function(){
       axis.title.x = element_blank(),
       axis.title.y = element_blank(),
       panel.border = element_blank(),
-      panel.grid=element_blank(),
+      panel.grid = element_blank(),
       axis.ticks = element_blank(),
       panel.background = element_blank(),
-      axis.text.x=element_blank(),
+      axis.text.x = element_blank(),
       legend.title = element_blank()) +
     geom_text(data = tabelaVacina,
-              aes(x ="", y=Dose1, label = Dose1),
+              aes(x = "", y=Dose1, label = Dose1),
               position = position_stack(vjust = 0.5)) +
     labs(title = "Grafico 1: Primeira Dose",
          subtitle = "Fonte: Conecta Recife")
@@ -57,32 +57,31 @@ vacinarecife <- function(){
       axis.title.x = element_blank(),
       axis.title.y = element_blank(),
       panel.border = element_blank(),
-      panel.grid=element_blank(),
+      panel.grid = element_blank(),
       axis.ticks = element_blank(),
       panel.background = element_blank(),
-      axis.text.x=element_blank(),
+      axis.text.x = element_blank(),
       legend.title = element_blank()) +
     geom_text(data = tabelaVacina,
-              aes(x ="", y=Dose2, label = Dose2),
+              aes(x = "", y=Dose2, label = Dose2),
               position = position_stack(vjust = 0.5)) +
     labs(title = "Grafico 2: Segunda Dose",
          subtitle = "Fonte: Conecta Recife")
 
-  dU <-
-    ggplot(tabelaVacina, aes(x = "", y = DoseUnica, fill = Sexo)) +
+  dU <- ggplot(tabelaVacina, aes(x = "", y = DoseUnica, fill = Sexo)) +
     geom_bar(width = 1, stat = "identity", color="green") +
     coord_polar("y", start = 0, direction = -1) +
     theme(
       axis.title.x = element_blank(),
       axis.title.y = element_blank(),
       panel.border = element_blank(),
-      panel.grid=element_blank(),
+      panel.grid = element_blank(),
       axis.ticks = element_blank(),
       panel.background = element_blank(),
-      axis.text.x=element_blank(),
+      axis.text.x = element_blank(),
       legend.title = element_blank()) +
     geom_text(data = tabelaVacina,
-              aes(x ="", y=DoseUnica, label = DoseUnica),
+              aes(x = "", y = DoseUnica, label = DoseUnica),
               position = position_stack(vjust = 0.5)) +
     labs(title = "Grafico 3: Dose Única",
          subtitle = "Fonte: Conecta Recife")
